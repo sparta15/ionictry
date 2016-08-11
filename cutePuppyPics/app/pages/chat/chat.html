@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Telefonica bot
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-list *ngFor="let message of messages" no-lines>
+    <ion-item *ngIf="message.userName === 'yotin'" item-left>
+      {{message.text}}>
+    </ion-item>
+    <ion-item *ngIf="message.userName === 'yotin'" item-rights>
+      {{message.text}}>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-label fixed>Message...</ion-label>
+    <ion-input>
+      <input type="text" [(ngModel)]="message.text" placeholder="Message..." />
+    </ion-input>
+    <button (click)="send(chatBox)" item-right>Send</button>
+  </ion-row>
+</ion-footer>
